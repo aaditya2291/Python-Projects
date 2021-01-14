@@ -1,0 +1,52 @@
+import random as rd
+
+
+def game(co, you):
+    if co == 'r':
+        if you == 's':
+            return False
+        elif you == 'r':
+            return None
+        else:
+            return True
+    if co == 's':
+        if you == 'p':
+            return False
+        elif you == 's':
+            return None
+        else:
+            return True
+    if co == 'p':
+        if you == 'r':
+            return False
+        elif you == 'p':
+            return None
+        else:
+            return True
+
+
+print("comp turn:Rock(r) Scissor(s) Paper(p)")
+rno = rd.randint(1, 3)
+#print(randno)
+b = input("yor turn: Rock(r) Scissor(s) Paper(p)")
+if rno == 1:
+    c = "r"
+
+elif rno == 2:
+    c = "s"
+    print(c)
+elif rno == 3:
+    c = "p"
+    print(c)
+
+
+
+a = game(c, b)
+print(f"computer chose {c}")
+print(f"computer chose {b}")
+if a is None:
+    print("Tie")
+elif a is True:
+    print("U Won")
+else:
+    print("U lose")
